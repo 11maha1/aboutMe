@@ -1,0 +1,338 @@
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+}
+.nav-items a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    font-size: 18px;
+}
+.nav-items a:hover {
+    color: #5e3e94;
+}
+/* Styles for the toggle switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #252525;
+    transition: 0.4s;
+    border-radius: 15px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+}
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #252525;
+    color: white;
+}
+body.dark-mode .filter-btn {
+  color: white;
+}
+body.dark-mode .nav-items a {
+  color: #fff;
+}
+body.dark-mode .nav-items a:hover {
+  color: #cab9e9;
+}
+body.dark-mode .social-icon {
+  color: #a1a1a1;
+}
+body.dark-mode .social-icon:hover {
+  color: #cab9e9; 
+}
+body.dark-mode .project-card {
+  background: #2C2C2E;
+}
+body.dark-mode .card-content p {
+  color: #E0E0E0;
+}
+body.dark-mode .card-content a{
+color: #E0E0E0;
+}
+body.dark-mode .card-content a:hover{
+  color:#cab9e9;
+}
+
+/* Move the slider to the right when in dark mode */
+input:checked + .slider {
+    background-color: white;
+}
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+.me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    font-size: 52px;
+    margin-top: 100px;
+    margin-left: 80px;
+}
+.me .text-container {
+    text-align: left; 
+}
+/* Cursor */
+.cursor{
+  margin-top: 10px;
+  position: relative;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+/* Animation */
+.typewriter-animation {
+animation: 
+  typewriter 5s steps(50) 2s 3 normal both, 
+  blinkingCursor 500ms steps(50) infinite normal;
+}
+@keyframes typewriter {
+from { width: 0; }
+to { width: 100%; }
+}
+@keyframes blinkingCursor{
+from { border-right-color: rgba(38, 143, 155, 0.75); }
+to { border-right-color: transparent; }
+}
+.me img {
+    max-width: 500px;
+    height: auto;
+    margin-left: 15px; 
+}
+.abutme{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.abutme h2{
+    font-size: 38px;
+    margin-right: 160px;
+    padding-left: 120px;
+
+}
+#me {
+    padding-top: 20px;
+    padding-left: 80px;
+    margin-top: 80px;
+    padding-right: 250px;
+    line-height: 28px;
+    font-size: 20px;
+}
+button {
+  margin-left: 80px;
+  font-family: inherit;
+  font-size: 15px;
+  background: #2c0f5e;
+  color: #fff;
+  padding: 0.5em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+button a {
+  color: white;
+  text-decoration: none;
+}
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+button:hover span {
+  transform: translateX(5em);
+}
+button:active {
+  transform: scale(0.95);
+}
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+#statsText{
+  font-weight: 600;
+  color: #5e3e94;
+  font-size: 24px;
+}
+#projects{
+margin-bottom: 100px;
+}
+/* تنسيق الأزرار للتصفية */
+.filter-buttons {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 15px;
+  }
+  .filter-btn {
+    color: #000000;
+    padding: 12px 16px;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .filter-btn:hover {
+    color: #4916a0;
+  }
+ #projects .filter-btn.active {
+    color: #4916a0;
+    border-bottom: 1px solid #4916a0;
+    border-radius: 0;
+  }
+
+  /* حاوية المشاريع */
+  .projects-container {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 15px;
+  }
+  
+  /* تنسيق البطاقات */
+  .project-card {
+    width: 400px;
+    height: 440px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .project-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 1.3s ease;
+  }
+  .card-content {
+    padding: 20px;
+  }
+  .card-content h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+    font-weight: 550;
+  }
+  .card-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  .card-content a{
+color: #666;
+margin-top: 10px; 
+ }
+ .card-content a:hover{
+    color:#2c0f5e;
+ }
+  /* تصفية المشاريع حسب الفئة */
+  .design, .website {
+    display: block;
+  }
+  .hidden {
+    display: none;/* منع الصور من الخروج خارج الإطار */
+  }
+
+footer {
+  margin-bottom: 10px;
+  margin-top: 60px;
+  padding: 20px;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-info h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+.footer-info p {
+  font-size: 1rem;
+  margin: 15px 0 20px;
+}
+.social-icons {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.social-icon {
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+.social-icon:hover {
+  color: #cab9e9; 
+}
+
+.social-icon .fab {
+  font-size: 1.7rem;
+}
